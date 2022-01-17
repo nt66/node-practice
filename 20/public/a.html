@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <title>20_post_get</title>
+</head>
+
+<body>
+  <div>
+    <span>name:</span> <input name="name" /><br/>
+    <span>age:</span> <input name="age" /><br/>
+    <button id="btn">提交</button>
+    <button id="btn2">post提交</button>
+  </div>
+</body>
+<script type="text/javascript">
+  $('#btn').click(function(){
+    var name = $('input[name=name]').val();
+   var age = $('input[name=age]').val();
+   console.log(name,age);
+   $.get('/addStudent',{
+     name:name,
+     age:age,
+   },function(data){
+    alert(data)
+   })
+});
+
+$('#btn2').click(function(){
+    var name = $('input[name=name]').val();
+   var age = $('input[name=age]').val();
+   console.log(name,age);
+   $.post('/addStudent',{
+     name:name,
+     age:age,
+   },function(data){
+    alert(data)
+   })
+})
+</script>
+</html>
