@@ -1,4 +1,4 @@
-// 创建一个服务器
+// 创建一个node服务器
 const http = require("http")
 
 const server = http.createServer(function(req,res){

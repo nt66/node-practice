@@ -2,7 +2,7 @@
 const http = require("http")
 const fs = require("fs")
 const server = http.createServer((req,res)=>{
-    // 字符乱码
+    // 解决字符乱码
     res.setHeader("Content-type","text/html;charset=UTF-8")
     if(req.url === "/"){
         res.end("首页")

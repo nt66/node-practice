@@ -12,11 +12,11 @@ const server = http.createServer((req,res)=>{
     const extName = path.extname(urlObj?.pathname) // 获取扩展名
     console.log('extName:',extName)
 
-    const queryStirng = queryString.parse(urlObj.query)
+    const queryStirng = queryString.parse(urlObj.query) // 字符串解析
     console.log('queryStirng:',queryStirng)
 
     res.end("this is path|url|querystring page")
 })
 
 server.listen(3000,'127.0.0.1')
-console.log('server started at 3000...')
+console.log('server started at 3000...') 

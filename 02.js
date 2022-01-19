@@ -3,7 +3,7 @@ const http = require("http")
 
 const a = 0; // **每个客户端访问都是共享的，证明是单线程|而java|php 每个登陆的都不是共享
 const server = http.createServer((req,res)=>{
-    // 0~10000随机数
+    // 0~100随机数
     const num = parseInt(Math.random()*1000)
     if(num === 888)
         throw new Error('error....') // **因为是单线程，如果一个人引起程序报错，则所有人都会挂掉。
